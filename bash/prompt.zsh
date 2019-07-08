@@ -68,4 +68,4 @@ precmd() {
 }
 
 uptime
-echo "Welcome back, Xavieret!"
+echo "Welcome back, Melón!"
