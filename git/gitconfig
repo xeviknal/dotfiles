@@ -1,0 +1,16 @@
+[user]
+  email = xeviknal@gmail.com
+  name  = Xavier Canal i Masjuan
+[push]
+  default = simple
+[grep]
+  linenumber = true
+[core]
+	editor = vim
+[alias]
+	last = cat-file commit HEAD
+[color]
+	branch = auto
+	ui = true
+[format]
+	pretty = oneline
