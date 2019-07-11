@@ -22,7 +22,7 @@ compinit
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(history fancy-ctrl-z docker dirhistory bgnotify branch bundler colored-man-pages common-aliases dircycle rails ruby tmux jira npm yarn)
+plugins=(history fancy-ctrl-z docker dirhistory bgnotify branch bundler colored-man-pages common-aliases dircycle ruby tmux jira npm yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -59,12 +59,13 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:$HOME/.rvm/bin"
 export JFX_DIR="/usr/lib/jvm/java-1.8.0-oracle-1.8.0.131-1jpp.1.el7_3.x86_64/jre/lib/ext"
 export BUNDLER_EDITOR=vim
-source ~/.rvm/scripts/rvm
+#source ~/.rvm/scripts/rvm
 
 # GOLANG PROJECTS
-source ~/.gvm/scripts/gvm
+[[ -s "/home/xcanalma/.gvm/scripts/gvm" ]] && source "/home/xcanalma/.gvm/scripts/gvm"
 export GOPATH=$HOME/code/golang
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:/opt"
 export KIALI_PATH=/home/xcanalma/code/golang/src/github.com/kiali/kiali
 export OPERATOR_PATH=/home/xcanalma/code/golang/src/github.com/maistra/istio-operator
 
