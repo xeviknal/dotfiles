@@ -7,8 +7,10 @@
   linenumber = true
 [core]
 	editor = vim
+	hooksPath = /home/xcanalma/.git_hooks/
 [alias]
 	last = cat-file commit HEAD
+  ls = for-each-ref --sort='authordate:iso8601' --no-merged=master --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short): %(color:blue)%(contents:subject)' refs/heads
 [color]
 	branch = auto
 	ui = true
