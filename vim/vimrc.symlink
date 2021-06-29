@@ -33,13 +33,14 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'ervandew/supertab'
 Plugin 'mileszs/ack.vim'
 Plugin 'fatih/vim-go'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'preservim/nerdcommenter'
 let g:go_version_warning = 0
 
 autocmd vimenter * NERDTree
