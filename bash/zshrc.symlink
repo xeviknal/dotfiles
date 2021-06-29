@@ -60,6 +60,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export JFX_DIR="/usr/lib/jvm/java-1.8.0-oracle-1.8.0.131-1jpp.1.el7_3.x86_64/jre/lib/ext"
 export BUNDLER_EDITOR=vim
 #source ~/.rvm/scripts/rvm
+source <(kubectl completion zsh)
 
 # GOLANG PROJECTS
 [[ -s "/home/xcanalma/.gvm/scripts/gvm" ]] && source "/home/xcanalma/.gvm/scripts/gvm"
@@ -67,11 +68,56 @@ export GOPATH=$HOME/code/golang
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:/opt"
 export KIALI_PATH=/home/xcanalma/code/golang/src/github.com/kiali/kiali
+export ISTIO_DEV_PATH=/home/xcanalma/.gvm/pkgsets/go1.14.3/global/src/istio.io/istio
 export OPERATOR_PATH=/home/xcanalma/code/golang/src/github.com/maistra/istio-operator
-
-# Swift sunshine - Docker deployment
-export AUTH_STRATEGY=login
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Istio dev vars
+# https://github.com/istio/istio/wiki/Preparing-for-Development#setting-up-go
+export ISTIO=/home/xcanalma/.gvm/pkgsets/go1.13.1/global/src/istio.io/istio
+export NICKNAME=xeviknal
+export HUB="docker.io/$NICKNAME"
+export TAG=$NICKNAME
+export GITHUB_USER=xeviknal
+export KUBECONFIG=${HOME}/.kube/config
+
+# Kiali
+export CLUSTER_TYPE=minikube
+export AUTH_STRATEGY=anonymous
+export CONSOLE_VERSION=local
+export DEFAULT_K8S_DRIVER=kvm2
+export OPERATOR_IMAGE_PULL_POLICY=IfNotPresent
+export KIALI_IMAGE_PULL_POLICY=IfNotPresent
+export CLUSTER_REPO_INTERNAL=quay.io
+export KIALI_IMAGE_VERSION=dev
+export PATH=$PATH:/opt/kind
+
+# Kubeflow
+export PATH=$PATH:/home/xcanalma/code/kubeflow
+export KF_NAME=kf-test
+export BASE_DIR=/home/xcanalma/code/kubeflow/deployments
+export KF_DIR=${BASE_DIR}/${KF_NAME}
+export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.1-branch/kfdef/kfctl_k8s_istio.v1.1.0.yaml"
+
+complete -F __start_kubectl k
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/xcanalma/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+  #eval "$__conda_setup"
+#else
+  #if [ -f "/home/xcanalma/miniconda3/etc/profile.d/conda.sh" ]; then
+      #. "/home/xcanalma/miniconda3/etc/profile.d/conda.sh"
+  #else
+      #export PATH="/home/xcanalma/miniconda3/bin:$PATH"
+  #fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+

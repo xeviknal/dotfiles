@@ -14,6 +14,7 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status -sb'
 alias gg='git grep'
+alias gbs="git for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short): %(color:blue)%(contents:subject)' refs/heads"
 
 alias glc="git log --graph --color --date=relative --stat"
 alias gd='git diff'
@@ -23,5 +24,8 @@ alias gw="git show"
 alias gcp='git cherry-pick'
 
 # Docker
-
 alias drm='docker rmi -f $(docker images -f "dangling=true" -q)'
+
+# Kubernetes
+
+alias k=kubectl
