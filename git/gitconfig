@@ -1,6 +1,7 @@
 [user]
   email = xeviknal@gmail.com
   name  = Xavier Canal i Masjuan
+	signingkey = A40BA474063C377B
 [push]
   default = simple
 [grep]
@@ -16,3 +17,7 @@
 	ui = true
 [format]
 	pretty = oneline
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[commit]
+	gpgsign = true
