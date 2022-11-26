@@ -29,8 +29,12 @@ alias drm='docker rmi -f $(docker images -f "dangling=true" -q)'
 # Kubernetes
 
 alias k=kubectl
-alias iek='k --context arn:aws:eks:eu-central-1:523635467204:cluster/ie-dev'
 
-# Tagging
+# Hasty
 
 alias kp=git tag kpa-xc -f && git push origin kpa-xc -f
+alias iek='k --context arn:aws:eks:eu-central-1:523635467204:cluster/ie-dev'
+
+# Utils
+# Number of the week
+alias week='date +%V'
