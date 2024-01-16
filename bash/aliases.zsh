@@ -38,3 +38,6 @@ alias iek='k --context arn:aws:eks:eu-central-1:523635467204:cluster/ie-dev'
 # Utils
 # Number of the week
 alias week='date +%V'
+
+# Curl
+alias curltime="curl -w \"@$HOME/.curl-format.txt\" -o /dev/null -s "
