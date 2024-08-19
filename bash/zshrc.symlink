@@ -34,7 +34,7 @@ export BUNDLER_EDITOR=vim
 export EDITOR=vim
 
 # GOLANG PROJECTS
-[[ -s "/home/xcanalma/.gvm/scripts/gvm" ]] && source "/home/xcanalma/.gvm/scripts/gvm"
+[[ -s "/home/xeviknal/.gvm/scripts/gvm" ]] && source "/home/xeviknal/.gvm/scripts/gvm"
 export GOPATH=$HOME/code/golang
 export PATH="$PATH:$GOPATH/bin:$HOME/kustomize:$HOME/kubectl:/opt"
 export KIALI_PATH=/home/xcanalma/code/golang/src/github.com/kiali/kiali
