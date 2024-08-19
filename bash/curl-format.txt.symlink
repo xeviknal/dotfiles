@@ -6,3 +6,4 @@
  time_starttransfer:  %{time_starttransfer}\n
                     ----------\n
          time_total:  %{time_total}\n
+      size_download: %{size_download}\n
