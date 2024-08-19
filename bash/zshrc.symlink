@@ -37,10 +37,9 @@ export EDITOR=vim
 [[ -s "/home/xeviknal/.gvm/scripts/gvm" ]] && source "/home/xeviknal/.gvm/scripts/gvm"
 export GOPATH=$HOME/code/golang
 export PATH="$PATH:$GOPATH/bin:$HOME/kustomize:$HOME/kubectl:/opt"
-export KIALI_PATH=/home/xcanalma/code/golang/src/github.com/kiali/kiali
-export ISTIO_DEV_PATH=/home/xcanalma/.gvm/pkgsets/go1.14.3/global/src/istio.io/istio
-export OPERATOR_PATH=/home/xcanalma/code/golang/src/github.com/maistra/istio-operator
-export LABELZ_PATH=/home/xcanalma/code/golang/src/github.com/hasty-ai/labelz
+export KIALI_PATH=/home/xeviknal/code/golang/src/github.com/kiali/kiali
+export ISTIO_DEV_PATH=/home/xeviknal/.gvm/pkgsets/go1.14.3/global/src/istio.io/istio
+export OPERATOR_PATH=/home/xeviknal/code/golang/src/github.com/maistra/istio-operator
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -48,7 +47,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Istio dev vars
 # https://github.com/istio/istio/wiki/Preparing-for-Development#setting-up-go
-export ISTIO=/home/xcanalma/.gvm/pkgsets/go1.13.1/global/src/istio.io/istio
+export ISTIO=/home/xeviknal/.gvm/pkgsets/go1.13.1/global/src/istio.io/istio
 export NICKNAME=xeviknal
 export HUB="docker.io/$NICKNAME"
 export TAG=$NICKNAME
@@ -86,14 +85,18 @@ unset __conda_setup
 ### Hasty
 export JIRA_URL=https://hasty.atlassian.net/
 export TESTER_ACCOUNT_PRIVATE_KEY="$(base64 < $HOME/.ssh/labelz-tester.key)"
-export PATH="$PATH:/home/xcanalma/.local"
-export LABELZ=/home/xcanalma/code/golang/src/github.com/hasty-ai/labelz
-export LABELZCMP="$LABELZ/docker-compose.yml"
-export LABELZE2E="$LABELZ/docker-compose.e2e.yml"
-source "$LABELZ/deployment/configs/shared.sh"
-source "/home/xcanalma/code/hasty-lab/export_e2e_env.sh"
+export PATH="$PATH:/home/xeviknal/.local:/home/xeviknal/.local/bin"
+export LABELZ_PATH=/home/xeviknal/code/golang/src/github.com/cloudfactory/labelz
+export LABELZCMP="$LABELZ_PATH/docker-compose.yml"
+export LABELZE2E="$LABELZ_PATH/docker-compose.e2e.yml"
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+source "$LABELZ_PATH/deployment/configs/shared.sh"
+source "/home/xeviknal/code/hasty-lab/export_e2e_env.sh"
+export PYTHON_BASE_ML=$AWS_ACCOUNT_ID.dkr.ecr.eu-west-1.amazonaws.com/hasty/ml:$PYTHON_BASE_ML_TAG
+export PYTHON_BASE_BACKEND=$AWS_ACCOUNT_ID.dkr.ecr.eu-west-1.amazonaws.com/hasty/backend:$PYTHON_BASE_BACKEND_TAG
+export PYTHON_BASE_AIOBACKEND=$AWS_ACCOUNT_ID.dkr.ecr.eu-west-1.amazonaws.com/hasty/aiobackend:$PYTHON_BASE_AIOBACKEND_TAG
 
 autoload -U +X bashcompinit && bashcompinit
 source <(kubectl completion zsh)
-source <(influx completion zsh)
 complete -o nospace -C /usr/bin/terraform terraform
