@@ -29,11 +29,15 @@ alias drm='docker rmi -f $(docker images -f "dangling=true" -q)'
 # Kubernetes
 
 alias k=kubectl
+alias kctx=kubectx
+alias kns=kubens
 
 # Hasty
 
 alias kp=git tag kpa-xc -f && git push origin kpa-xc -f
-alias iek='k --context arn:aws:eks:eu-central-1:523635467204:cluster/ie-dev'
+alias iek='k --context arn:aws:eks:eu-west-1:523635467204:cluster/ie-dev-eu-west-1'
+alias iek-dev='k --context arn:aws:eks:eu-central-1:523635467204:cluster/ie-dev'
+alias iek-prod='k --context arn:aws:eks:eu-central-1:718860067770:cluster/ie-prod'
 
 # Utils
 # Number of the week
